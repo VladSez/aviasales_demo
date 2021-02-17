@@ -1,23 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import './styles/styles.css';
+import React, { useState } from "react";
+import { Header } from "./components/Header.js";
+import { Filter } from "./components/Filter.js";
+import { Tabs } from "./components/Tabs.js";
+import { Tickets } from "./components/Tickets.js";
+import { useTickets } from "./hooks/useTickets";
+
 
 function App() {
+  const { tickets, filtered, setFiltered } = useTickets();
+
+  const [filter, setFilter] = useState({
+    all: true,
+    no: true,
+    one: true,
+    two: true,
+    three: true
+  });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="main">
+      <Header />
+      <div className="appbox">
+        <div className="mainApp">
+          <Filter
+            setFiltered={setFiltered}
+            setFilter={setFilter}
+            filter={filter}
+            tickets={tickets}
+          />
+          <div className="ticketbox">
+            <div className="ticketsList">
+              <Tabs setFiltered={setFiltered} />
+              <Tickets filtered={filtered} />
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
