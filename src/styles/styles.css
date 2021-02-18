@@ -73,8 +73,6 @@ body {
   white-space: nowrap;
   align-items: center;
   height: 40px;
-
-  user-select: none;
 } */
 
 .input-label {
@@ -113,7 +111,6 @@ body {
   flex: 1 0 0;
   cursor: pointer;
   text-align: center;
-  outline: none;
 }
 
 .isActiveTabsbutLeft {
@@ -135,7 +132,6 @@ body {
   flex: 1 0 0;
   cursor: pointer;
   text-align: center;
-  outline: none;
 }
 
 .isActiveTabsbutRight {
@@ -218,7 +214,6 @@ body {
   font-weight: 600;
   font-size: 12px;
   line-height: 18px;
-
   letter-spacing: 0.5px;
   text-transform: uppercase;
   color: #a0b0b9;
@@ -236,7 +231,6 @@ body {
   padding-left: 5px;
   padding-right: 5px;
   padding-top: 5px;
-  white-space: nowrap;
 }
 
 .stops {
@@ -244,7 +238,6 @@ body {
   padding-left: 5px;
   padding-right: 5px;
   padding-top: 5px;
-  white-space: nowrap;
 }
 
 .NoTickets {
@@ -346,7 +339,6 @@ body {
     flex: 1 0 0;
     cursor: pointer;
     text-align: center;
-    outline: none;
   }
 
   .isActiveTabsbutLeft {
@@ -369,7 +361,6 @@ body {
     flex: 1 0 0;
     cursor: pointer;
     text-align: center;
-    outline: none;
   }
 
   .isActiveTabsbutRight {
@@ -421,7 +412,6 @@ body {
     flex: 1 0 0;
     cursor: pointer;
     text-align: center;
-    outline: none;
   }
 
   .isActiveTabsbutLeft {
@@ -444,7 +434,6 @@ body {
     flex: 1 0 0;
     cursor: pointer;
     text-align: center;
-    outline: none;
   }
 
   .isActiveTabsbutRight {
