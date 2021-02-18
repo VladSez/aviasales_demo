@@ -15,18 +15,7 @@ export const Tickets = ({ filtered }) => {
             return (
               <div className="ticketBox">
                 <div className="ticket">
-                  <div className="ticketHeader">
-                    <div className="price" key={index}>
-                      {`${el.price.toLocaleString()} P`}
-                    </div>
-                    <div className="companyLogoBox">
-                      <img
-                        src={`https://pics.avs.io/99/36/${el.carrier}.png`}
-                        alt="companyLogo"
-                        className="companyLogo"
-                      />
-                    </div>
-                  </div>
+                  <TicketHeader el={el} index={index}/>
                   <div className="ticketInfo">
                     {el.segments.map((segment) => {
                       return <Segment segment={segment} />;
@@ -55,14 +44,14 @@ const Segment = ({ segment }) => {
             <div>{`${segment.origin} - ${segment.destination}`}</div>
           </div>
           <div className="info">
-            {new Date(segment.date).getHours() +
-              ":" +
-              new Date(segment.date).getMinutes() + 
-              " - " +
-              (new Date(segment.date).getHours() + (segment.duration / 60) | 0) +
-              ":" +
-              (new Date(segment.date).getMinutes() + segment.duration % 60)
-              }
+          {new Date(segment.date).getHours() +
+          ":" +
+          new Date(segment.date).getMinutes() + 
+          " - " +             
+          new Date(new Date(segment.date).setHours(new Date(segment.date).getHours() + Math.floor(segment.duration / 60) ) ).getHours() +
+          ":" +
+          new Date(new Date(segment.date).setMinutes(new Date(segment.date).getMinutes() + segment.duration)).getMinutes()
+          }
           </div>
         </div>
       </div>
@@ -100,5 +89,22 @@ const Segment = ({ segment }) => {
         </div>
       </div>
     </div>
+  );
+};
+
+const TicketHeader = ({ el, index }) => {
+  return(
+<div className="ticketHeader">
+                    <div className="price" key={index}>
+                      {`${el.price.toLocaleString()} P`}
+                    </div>
+                    <div className="companyLogoBox">
+                      <img
+                        src={`https://pics.avs.io/99/36/${el.carrier}.png`}
+                        alt="companyLogo"
+                        className="companyLogo"
+                      />
+                    </div>
+                  </div>
   );
 };

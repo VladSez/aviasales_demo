@@ -468,4 +468,11 @@ body {
     text-align: center;
   }
 
+  .content {
+    margin-top: 5px;
+    display: flex;
+    flex-direction: row;
+    flex-flow: wrap;
+  }
+
 }
