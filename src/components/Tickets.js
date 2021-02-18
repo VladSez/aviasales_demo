@@ -57,7 +57,12 @@ const Segment = ({ segment }) => {
           <div className="info">
             {new Date(segment.date).getHours() +
               ":" +
-              new Date(segment.date).getMinutes()}
+              new Date(segment.date).getMinutes() + 
+              " - " +
+              (new Date(segment.date).getHours() + (segment.duration / 60) | 0) +
+              ":" +
+              (new Date(segment.date).getMinutes() + segment.duration % 60)
+              }
           </div>
         </div>
       </div>
